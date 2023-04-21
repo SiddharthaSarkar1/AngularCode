@@ -49,9 +49,16 @@ var myfunc = function (a, b, c) {
     if (c === void 0) { c = "Saheb"; }
     console.log("Hello " + a + " " + c);
 };
-myfunc('TuTu');
+myfunc('TuTaI');
 var func2 = function (a, b) {
     return a + b;
+};
+//Optional Parameter
+var addnum1 = function (num1, num2) {
+    if (num2)
+        return num1 + num2;
+    else
+        return num1;
 };
 console.log(func2(4, 8));
 var UserDetails = function (id, user) {
