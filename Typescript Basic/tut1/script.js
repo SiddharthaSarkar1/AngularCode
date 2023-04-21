@@ -49,11 +49,27 @@ var myfunc = function (a, b, c) {
     if (c === void 0) { c = "Saheb"; }
     console.log("Hello " + a + " " + c);
 };
-myfunc('TuTu');
+myfunc('TuTaI');
 var func2 = function (a, b) {
     return a + b;
 };
 console.log(func2(4, 8));
+//Optional Parameter
+var addnum1 = function (num1, num2) {
+    if (num2)
+        return num1 + num2;
+    else
+        return num1;
+};
+console.log(addnum1(10, 10));
+console.log(addnum1(10));
+//Default Parameter
+var addnum2 = function (num1, num2) {
+    if (num2 === void 0) { num2 = 10; }
+    return num1 + num2;
+};
+console.log(addnum2(10));
+console.log(addnum2(10, 20));
 var UserDetails = function (id, user) {
     console.log("User id is " + id + ", name is " + user.name + " and age is " + user.age);
 };

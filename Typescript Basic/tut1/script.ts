@@ -77,6 +77,8 @@ myfunc('TuTaI');
 const func2 = (a: number, b: number): number => {
     return a+b;
 }
+console.log(func2(4, 8));
+
 //Optional Parameter
 const addnum1 : Function = (num1: number, num2?: number ) : number => {
     if(num2)
@@ -84,8 +86,18 @@ const addnum1 : Function = (num1: number, num2?: number ) : number => {
     else
     return num1
 }
+console.log(addnum1(10,10));
+console.log(addnum1(10));
 
-console.log(func2(4, 8));
+
+//Default Parameter
+const addnum2 : Function = (num1: number, num2: number = 10 ) : number => {
+    return num1+num2; 
+}
+
+console.log(addnum2(10));
+console.log(addnum2(10,20));
+
 
 //Type Alias
 
@@ -99,3 +111,4 @@ const UserDetails = ( id: stringOrNumber, user: userType) => {
 let userOne : userType = {name:"Sidd", age:25};
 
 UserDetails(1, userOne);
+
