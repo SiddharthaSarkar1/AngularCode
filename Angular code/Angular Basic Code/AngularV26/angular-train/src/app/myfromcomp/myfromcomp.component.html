@@ -1,0 +1,36 @@
+<p>myfromcomp works!</p>
+<h3>-----------------Template Driven Forms-----------------</h3>
+<form #loginForm="ngForm" (ngSubmit)="userLogin(loginForm.value)">
+
+    <input type="text" ngModel required #name="ngModel" pattern="[a-zA-Z]+$" placeholder="Enter name" name="name">
+    <br>
+    <span *ngIf="name.invalid && name.touched">Please enter valid input.</span>
+    <br>
+    <input type="text" ngModel required #password="ngModel" minlength="2" placeholder="Enter password" name="password">
+    <br>
+    <span *ngIf="password.invalid && password.touched">Please enter valid input.</span>
+    <br>
+    <button [disabled]="loginForm.invalid">Login</button>
+</form>
+
+<!-- <br>
+<button (click)="userLogin(loginForm.value)">Button outside form</button> -->
+
+<h3>---------------Reactive Forms in Angular--------------</h3>
+<form [formGroup]="formLogin" (ngSubmit)="loginUser()">
+    <input type="text" placeholder="Enter name" name="user" formControlName="user">
+    <br>
+        <span *ngIf="user && user.invalid && user.touched">This field is not valid.</span>
+    <br>
+    <input type="text" placeholder="Enter password" name="password"  formControlName="password">
+    <br>
+        <span *ngIf="password && password.invalid && password.touched">This field is not valid.</span>
+    <br>
+    <button [disabled]="formLogin.invalid">Login</button>
+</form>
+
+
+<h3>---------------------Directives(ngIf, ngFor etc.)---------------------</h3>
+
+<h1>Hello this is normal</h1>
+<h1 appRedEl>Hello i am using custom directives</h1>

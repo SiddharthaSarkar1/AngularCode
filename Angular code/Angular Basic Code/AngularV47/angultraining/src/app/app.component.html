@@ -1,0 +1,37 @@
+<h1>---------------APP-COMPONENT----------------</h1>
+
+<h3>{{ title }}</h3>
+
+<h3>----------Routing Recap-----------</h3>
+
+<ul> 
+  <li><a routerLink="ulogin">Login</a></li>
+  <li><a routerLink="signup">Sign up</a></li>
+</ul>
+<router-outlet></router-outlet>
+
+<h3>--------------Routing Module------------------</h3>
+<h5>ADMIN PAges</h5>
+<ul>
+  <li><a routerLink="admin/login">Admin Login</a></li>
+  <li><a routerLink="admin/list">Admin List</a></li>
+</ul>
+<h5>USER PAges</h5>
+<ul>
+  <li><a routerLink="user/login">Admin Login</a></li>
+  <li><a routerLink="user/list">Admin List</a></li>
+</ul>
+
+<h3>------------------Lazy Loading-----------------------</h3>
+
+<ul>
+  <li><a routerLink="myadmin/login">Admin Login</a></li>
+  <li><a routerLink="myadmin/list">Admin List</a></li>
+</ul>
+
+<router-outlet></router-outlet>
+
+<h3>--------------------Lazy Loading Components-----------------------</h3>
+
+<button (click)="loadAdmin()">Load Admin List</button>
+<button (click)="loadUser()">Load User List</button>

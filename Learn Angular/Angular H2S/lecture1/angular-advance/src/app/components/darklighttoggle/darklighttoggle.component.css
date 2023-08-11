@@ -1,0 +1,45 @@
+
+.abc{
+    position: relative;
+ }
+
+ h1{
+     position: absolute;
+     color: green;
+     font-weight: bold;
+     text-align: center;
+     font-size: 50px;
+     top: 230px;
+     left: 450px;
+     cursor: pointer;
+     
+ }
+ .inr1{
+     height: 50vw;
+     width: 40vw;
+     display: flex;
+     justify-content: space-around;
+     position: absolute;
+     top: 329px;
+     left: 448px;
+     font-family: math;
+ }
+ .inr1 div{
+     
+     color: green;
+     flex-direction: row;
+     font-size: 12px;
+     
+ }
+ 
+ h5{
+     position: absolute;
+     color: green;
+     text-align: center;
+     top: 230px;
+     left: 675px;
+     font-size: 13px;
+     font-stretch: ultra-condensed;
+     font-family: system-ui;
+     opacity: 0.9;
+ }

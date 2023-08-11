@@ -1,0 +1,48 @@
+<h1>My Angular Application Using Routrs</h1>
+
+<a routerLink="">Home</a><br>
+<a routerLink="about">About</a><br>
+<a routerLink="user">User</a><br>
+
+<br>
+
+<h3>--------------Dynamic Routing--------------</h3>
+
+<a routerLink="user/20">Anil</a>
+<br>
+<a routerLink="user/30">Sam</a>
+<br>
+<a routerLink="user/40">Peter</a>
+<br>
+
+<router-outlet></router-outlet>
+
+<h3>-----------------Learning service in app component--------------------</h3>
+
+<ul>
+    <li *ngFor="let user of users">
+        {{ user.name }} - {{ user.age }} - {{ user.email }}
+    </li>
+</ul>
+
+<app-footer></app-footer>
+
+<h3>-----------------Api using Get--------------------</h3>
+
+<ul>
+    <li *ngFor="let usera of apiusers">
+        {{ usera.id }} - {{ usera.title }}
+    </li>
+</ul>
+
+<h3>--------------------Learning post API--------------------</h3>
+
+<form #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+    <input type="text" ngModel name="name" placeholder="Enter name">
+    <br><br>
+    <input type="text" ngModel name="email" placeholder="Enter email">
+    <br><br>
+    <input type="text" ngModel name="password" placeholder="Enter password">
+    <br><br>
+    <button>Add new member</button>
+</form>

@@ -1,0 +1,33 @@
+<app-header></app-header>
+<h1 style="color:red;">Hello Angular {{ title }} </h1>
+<h3 style="color:rgb(61, 15, 15);">Calling the function {{ getVal() }}</h3>
+<h4>Logical Expression -> {{ 2+2+21 }}</h4>
+
+<h3>Functions event related----------</h3>
+<button (click)="getName('Tutai')">Click Me</button>
+<br>
+<button (click)="getData('hello')">Call Function</button>
+<br>
+<input type="text" #box (keyup)="getData(box.value)" placeholder="event keyup">
+<br>
+<input type="text" #box1 (keydown)="getData(box1.value)" placeholder="event keydown">
+<br>
+<input type="text" #box2 (blur)="getData(box2.value)" placeholder="event blur">
+
+<h1 (mouseover)="getData('MOUSE OVER!!!')">Code step by step</h1>
+<br>
+<h1 (mouseleave)="getData('MOUSE LEAVE!!!')">Siddhartha Sarkar</h1>
+
+<h4>Get input box value and Display ----------------------------- </h4>
+<input type="text" #txbox placeholder="Enter your name" name="name">
+<button (click)="getValue(txbox.value)">Click</button>
+<br>
+<p>Input box value is : {{ displayVal }}</p>
+
+<h3 class="heading1">Making Counter--------------------</h3>
+
+<button mat-raised-button color="accent" (click)="counter('add')">++</button>
+<button mat-raised-button color="primary" (click)="counter('minus')">--</button>
+<p>Count : {{ count }}</p>
+
+<app-login></app-login>

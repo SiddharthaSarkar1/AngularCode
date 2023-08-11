@@ -1,0 +1,69 @@
+<h1 style="color:green;">{{ headline }}</h1>
+<!-- <h3 class="heading">login works!</h3> -->
+
+<!-- Interpolation -->
+<input type="text" name="user-name" value={{name}}>
+<br><br>
+<!-- Property binding -->
+<input type="text" name="user-name" [value]=name>
+
+<h3>---------IF-ELSE--------</h3>
+
+<h1 *ngIf="show then ifBlock else elseBlock"></h1>
+<ng-template #ifBlock>
+    <h1>If Condition.</h1>
+</ng-template>
+<ng-template #elseBlock>
+    <h1>Else Condition.</h1>
+</ng-template>
+
+<h3>--------------Multiple If Else-------------</h3>
+<ng-template [ngIf]="color==='red'">
+    <h1 style="color:red;">Red Color</h1>
+</ng-template>
+<ng-template [ngIf]="color==='green'">
+    <h1 style="color:green;">Green Color</h1>
+</ng-template>
+<ng-template [ngIf]="color==='blue'">
+    <h1 style="color:blue;">Blue Color</h1>
+</ng-template>
+
+<h3>-------------------SWITCH-CASE-----------------------</h3>
+<div [ngSwitch]="colorSw">
+    <h1 *ngSwitchCase="'red'" style="color:red;">Red Color</h1>
+    <h1 *ngSwitchCase="'green'" style="color:green;">Green Color</h1>
+    <h1 *ngSwitchCase="'blue'" style="color:blue;">Blue Color</h1>
+    <h1 *ngSwitchCase="'orange'" style="color:orange;">Orange Color</h1>
+    <h1 *ngSwitchCase="'pink'" style="color:pink;">Pink Color</h1>
+    <h1 *ngSwitchCase="'skyblue'" style="color:skyblue;">SkyBlue Color</h1>
+    
+    <h1 *ngSwitchDefault>Unknown Color</h1>
+
+</div>
+
+<h3>----------------For Loop(*ngFor)---------------</h3>
+
+<h3 *ngFor="let item of users">
+   User name is : {{ item }}
+</h3>
+
+
+<h3 *ngFor="let item of userDetails">
+    {{ item.name }} - {{ item.email }} - {{ item.phone }}
+ </h3>
+
+ <h3>-------------Nested Loop-------------</h3>
+
+ <ul *ngFor="let item of userArray">
+    <li>Name : {{ item.name }}</li>
+    <li>Phone : {{ item.phone }}</li>
+    <li>Social Accounts : </li>
+    <ul *ngFor="let account of item.socialAccount">
+        <li>{{ account }}</li>
+    </ul>
+    
+ </ul>
+
+ <app-tutai-comp></app-tutai-comp>
+
+ <app-mytodo></app-mytodo>

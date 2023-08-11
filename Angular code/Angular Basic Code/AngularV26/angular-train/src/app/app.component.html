@@ -1,0 +1,50 @@
+<h1>--------------Parent Component---------------------</h1>
+
+<app-child [item]="data"></app-child>
+
+<button (click)="updateChild()">Update Child Component</button>
+
+<ul *ngFor="let user of userDetails">
+  <app-user-details [item]="user"></app-user-details>
+</ul>
+
+<app-childtwo (updateDataEvent)="updateData($event)"></app-childtwo>
+<p>{{ mydata }}</p>
+
+<h3>----------------Two way binding--------------</h3>
+<input type="text" [(ngModel)]="name">
+
+<h4>{{ name }}</h4>
+
+<h3>--------------Template Reference Variable(#id)----------------</h3>
+<input type="text" #userbox>
+<button (click)="getVal(userbox.value)">Call Function</button>
+
+<h3>-------------pipes in angular--------------</h3>
+
+<h1>{{ mytitle }}</h1>
+<h1>{{ mytitle | uppercase }}</h1>
+<h1>{{ mytitle | lowercase }}</h1>
+
+<h2>{{ today }}</h2>
+<h2>{{ today | date }}</h2>
+<h2>{{ today | date : 'fullDate' }}</h2>
+
+<h3>------------Advance pipes-------------</h3>
+
+<h2>{{ mytitle | slice : 3 }}</h2>
+<h2>{{ mytitle | slice : 6 | uppercase }}</h2>
+
+<h2>{{ userexmpl | json | uppercase }}</h2>
+
+<h2>{{ 2000.3000 | number : '2.3' }}</h2>
+
+<h2>{{ 20 | currency : "USD" }}</h2>
+<h2>{{ 20 | currency : "GBP" }}</h2>
+<h2>{{ 20 | currency : "INR" }}</h2>
+
+<h3>-----------------Make Custom pipes----------------</h3>
+
+<h2>{{ 20 | usdInr : 100 }}</h2>
+
+<app-myfromcomp></app-myfromcomp>

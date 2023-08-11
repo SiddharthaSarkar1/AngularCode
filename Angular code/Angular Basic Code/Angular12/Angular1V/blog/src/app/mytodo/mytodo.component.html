@@ -1,0 +1,11 @@
+<h2>Starting of mytodo</h2>
+<h1>-----------------Todo List with Angular--------------------</h1>
+
+<input type="text" placeholder="Enter new task" #task />
+<br><br>
+<button mat-raised-button color="accent" (click)="addTask(task.value)">Add Task</button>
+
+<ul *ngFor="let item of list">
+    <li>{{ item.id }} - {{ item.task }}  <button mat-button color="warn" (click)="removeTask(item.id)">Remove</button></li>
+</ul>
+
