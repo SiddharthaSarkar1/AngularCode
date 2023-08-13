@@ -1,0 +1,14 @@
+<h1>radiocompbut works!</h1>
+<h1>--------------------Radio component------------------</h1>
+<div>
+    <h4>-----------Select the gender-----------------</h4>
+    <ng-template [ngIf]="gender == 'Male'">
+        <input type="radio" name="gender" [value]="'Male'" checked>Male
+        <input type="radio" name="gender" [value]="'Female'" disabled>Female
+    </ng-template>
+    <ng-template [ngIf]="gender == 'Female'">
+        <input type="radio" name="gender" [value]="'Male'">Male
+        <input type="radio" name="gender" [value]="'Female'" checked>Female
+    </ng-template>
+
+</div>

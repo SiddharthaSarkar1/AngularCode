@@ -1,0 +1,36 @@
+<h1>myapicard works!</h1>
+<h1> ---------------- My Api Data ----------------- </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 my-2" *ngFor="let data of mydatafromapi.entries">
+            <div class="card text-white bg-warning mb-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ data.API }}</h5>
+                    <p class="card-text">{{ data.Description }}</p>
+                    <p class="card-text">{{ data.Link }}</p>
+                    <p class="card-text">{{ data.Category }}</p>
+                    <p class="card-text">{{ data.Auth }}</p>
+                    <p class="card-text">{{ data.HTTPS }}</p>
+                    <p class="card-text">{{ data.Cors }}</p>
+                    <div>
+                        <h6>HTTPS</h6>
+                        <ng-template [ngIf]="data.HTTPS == true">
+                            <input type="radio" name="https{{ data.API }}" [value]="'true'" checked>True
+                            <input type="radio" name="https{{ data.API }}" [value]="'false'" disabled>False
+                        </ng-template>
+                        <ng-template [ngIf]="data.HTTPS == false">
+                            <input type="radio" name="https{{ data.API }}" [value]="'true'" disabled>True
+                            <input type="radio" name="https{{ data.API }}" [value]="'false'" checked>False
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div>
+    <h5>{{ data.API }}</h5>
+</div> -->

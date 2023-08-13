@@ -1,0 +1,34 @@
+<h1>------------Here I am learning how to create reactive forms using FORM BUILDER--------------</h1>
+
+<form [formGroup]="userprofileForm" (ngSubmit)="onSubmit()">
+
+    <label>
+        First Name :
+        <input type="text" formControlName="firstName">
+    </label><br>
+    <label>
+        Last Name :
+        <input type="text" formControlName="lastName">
+    </label><br>
+
+    <div formGroupName="address">
+        <label>
+            Address 1 :
+            <input type="text" formControlName="address1">
+        </label><br>
+        <label>
+            Address 2 :
+            <input type="text" formControlName="address2">
+        </label><br>
+        <label>
+            State :
+            <input type="text" formControlName="state">
+        </label><br>
+        <label>
+            Zip :
+            <input type="text" formControlName="zip">
+        </label><br>
+    </div>
+    <button type="submit" [disabled]="!userprofileForm.valid">Submit</button>
+
+</form>

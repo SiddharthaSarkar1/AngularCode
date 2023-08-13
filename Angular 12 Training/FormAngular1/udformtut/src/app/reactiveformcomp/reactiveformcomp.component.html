@@ -1,0 +1,35 @@
+<h1>reactiveformcomp works!</h1>
+<h1>--------------------------Reactive Form Tutorial (Udemy Course)-----------------------------</h1>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="username" placeholder="Enter username">
+    <br>
+    <span *ngIf="username && username.invalid && username.touched">Please enter valid username.</span>
+    <br>
+    <input type="text" formControlName="email" placeholder="Enter email">
+    <br>
+    <span *ngIf="email && email.invalid && email.touched">Please enter valid username.</span>
+    <br>
+    <div *ngFor="let gender of genders">
+        <label><input type="radio" formControlName="gender" [value]="gender"> {{ gender }} </label>
+    </div>
+    <br>
+    <div formArrayName="hobbies">
+        <h4>Your Hobbies</h4>
+        <button type="button" (click)="onAddHobby()">Add Hobby</button>
+
+        <div *ngFor="let hobbyControl of hobbiesControls; let i = index">
+            <input type="text" [formControlName]="i">
+        </div>
+    </div>
+    <br> 
+    <button [disabled]="!signupForm.valid">Submit</button>
+</form>
+
+<div>
+    <p>Username : {{ signupForm.value.username }}</p>
+    <p>Email : {{ signupForm.value.email }}</p>
+    <p>Gender : {{ signupForm.value.gender }}</p>
+    <p>Hobbies : {{ signupForm.value.hobbies }}</p>
+    <p>Form Status : {{ signupForm.status }}</p>
+</div>

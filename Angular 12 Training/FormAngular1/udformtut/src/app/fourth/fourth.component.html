@@ -1,0 +1,20 @@
+<p>fourth works!</p>
+<h1>Checkbox learning tutorial</h1>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Food</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let n of food">
+                <th>
+                    <input type="checkbox" [value]="n.id" [checked]="n.select" (change)="onchangeFood($event)">
+                </th>
+                <td>{{ n.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

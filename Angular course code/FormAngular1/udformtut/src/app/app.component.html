@@ -1,0 +1,69 @@
+<h2>---------------------Udemy Course Form Tutorial(Template Driven Form)-----------------------</h2>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <!-- <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup"> -->
+    <input type="text" [ngModel]="'Joe Schome'" required name="username" placeholder="Enter Username"
+      #username="ngModel">
+    <br>
+    <span class="cuserr" *ngIf="!username.valid && username.touched">Please enter valid username.</span>
+    <br>
+    <input type="text" [ngModel]="'joeschome@mail.com'" required email name="email" placeholder="Enter Email"
+      #email="ngModel">
+    <br>
+    <span class="cuserr" *ngIf="!email.valid && email.touched">Please enter valid email.</span>
+  <!-- </div>
+  <br>
+  <span class="cuserr" *ngIf="!userData.valid && userData.touched">This UserData is not valid</span> -->
+  <br>
+  <textarea name="questionAnswer" [(ngModel)]="answer" rows="5"></textarea>
+  <br>
+  <p>Your Query : {{ answer }}</p>
+  <br>
+  <div *ngFor="let gender of genders">
+    <label><input type="radio" name="gender" ngModel [value]="gender" required> {{ gender }} </label>
+  </div>
+  <button [disabled]="!f.valid">Submit</button>
+</form>
+<hr>
+<hr>
+<div *ngIf="submitted">
+  <h2> :: Your Data :: </h2>
+  <p>Username : {{ user.username }}</p>
+  <p>Email : {{ user.email }}</p>
+  <p>Your Query : {{ user.query }}</p>
+  <p>Gender : {{ user.gender }}</p>
+</div>
+
+<app-reactiveformcomp></app-reactiveformcomp>
+
+
+<h3>----------------trying the redirection--------------------</h3>
+<a routerLink="myhomer">Myhome component redirection</a>
+<h3>----------------Redirection with button--------------------</h3>
+<div>
+  <button (click)="goToPage('student')">Go to another page</button>
+</div>
+
+
+
+<app-httptutcomp></app-httptutcomp>
+
+<input placeholder="user" [(ngModel)]="userObject.name">
+<input  placeholder="user" [(ngModel)]="userObject.age">
+<input placeholder="user" [(ngModel)]="userObject.id">
+
+<app-user [user]="userObject" (userEvent)="handlEven($event)"></app-user>
+
+<br><br><br>
+<hr>
+<a routerLink="first">First</a><br>
+<a routerLink="second">Second</a><br>
+<a routerLink="third">Third</a><br>
+<a routerLink="fourth">Fourth</a><br>
+<a routerLink="company">Company</a><br>
+<a routerLink="person">Person</a><br>
+<hr>
+<br><br><br>
+<router-outlet></router-outlet>
+
+<app-useformbuilder></app-useformbuilder>

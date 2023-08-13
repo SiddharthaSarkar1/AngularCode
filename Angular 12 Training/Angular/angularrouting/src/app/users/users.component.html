@@ -1,0 +1,34 @@
+<p>users works!</p>
+
+<div>
+    <button (click)="onCategoriesClick()">Go To Categories</button>
+</div>
+<hr>
+<div>
+    <h5>ID : {{ user.id }}</h5>
+    <h5>Name : {{ user.name }}</h5>
+</div>
+<hr>
+<div>
+    <a [routerLink]="['/users', 1, 'Leela']"
+     [queryParams]="{page: 1, search: 'leela'}"
+      [fragment]="'load'">Get Details of Leela</a>
+</div>
+
+<div>
+    <button (click)="getRamaDetails()">Get Rama Details</button>
+</div>
+
+<h3>USERS</h3>
+
+<ul class="nav flex-column">
+    <li class="nav-item">
+        <a [routerLink]="['/users', 10, 'Rama']" class="nav-link">Get Rama Details</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/users', 50, 'Krishna']" class="nav-link">Get Krishna Details</a>
+    </li>
+    <li class="nav-item">
+        <a [routerLink]="['/users', 110, 'Leela']" class="nav-link">Get Leela Details</a>
+    </li>
+</ul>

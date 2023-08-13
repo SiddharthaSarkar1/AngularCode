@@ -1,0 +1,33 @@
+<p>first works!</p>
+<div>
+    <label for="choise">Select Your choise : </label>
+  <select id="choise" [(ngModel)]="myipval" (change)="clickingHere()">
+    <option value="none" disabled>None</option>
+    <option value="myname">Name</option>
+    <option value="myage">Age</option>
+    <option value="mygen">Gender</option>
+    <option value="myskill">Skills</option>
+  </select>
+</div>
+
+<div [ngSwitch]="myipval">
+    <div *ngSwitchCase = "'myname'">
+        <h5>Name : </h5>
+        <input type="text" name="name">
+    </div>
+    <div *ngSwitchCase = "'myage'">
+        <h5>Age : </h5>
+        <input type="number" name="age" min='1' max='100'>
+    </div>
+    <div *ngSwitchCase = "'mygen'">
+        <h5>Gender : </h5>
+        <input type="radio" name="male" value="male">Male
+        <input type="radio" name="female" value="female">Female
+    </div>
+    <div *ngSwitchCase = "'myskill'">
+        <h5>Skills : </h5>
+        <input type="checkbox" name="c" value="c">C
+        <input type="checkbox" name="cpp" value="cpp">C++
+        <input type="checkbox" name="java" value="java">Java
+    </div>
+</div>

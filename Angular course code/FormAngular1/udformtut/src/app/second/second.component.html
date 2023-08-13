@@ -1,0 +1,8 @@
+<p>second works!</p>
+
+<select [(ngModel)]="deptId" (change)="resetDept()">
+    <option value="0" disabled>None</option>
+    <option *ngFor="let dept of departments" value="{{ dept.id }}">{{ dept.name }}</option>
+</select>
+
+<p>department id value is : {{ deptId }}</p>
